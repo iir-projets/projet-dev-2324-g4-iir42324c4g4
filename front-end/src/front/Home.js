@@ -1,5 +1,7 @@
+// Home.js
 import React from 'react';
-import './Home.css'; // Importer le fichier CSS
+import { Link } from 'react-router-dom';
+import './Home.css'; // Assurez-vous que le chemin est correct ici
 
 function Home() {
   return (
@@ -7,9 +9,11 @@ function Home() {
       <header className="header">
         <h1>CinéRésa</h1>
         <nav className="navbar">
-          <a href="#">Offre Spéciale</a>
-          <a href="#">Programme</a>
-          <a href="#">À Propos</a>
+          <Link to="/">Acceuil</Link>
+          <Link to="/horaires">Horaires</Link>
+          <Link to="/programmes">Programmes</Link>
+          <Link to="/tarifs">Tarifs</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
       </header>
 
@@ -18,16 +22,14 @@ function Home() {
       </section>
 
       <div className="subtitle">
-        Réservez dès maintenant vos places pour les derniers films à 
-        <br></br>
-         l'affiche sur CinéRésa et vivez une expérience cinématographique inoubliable !
+        Réservez dès maintenant vos places pour les derniers films à
+        <br />
+        l'affiche sur CinéRésa et vivez une expérience cinématographique inoubliable !
       </div>
 
       <a href="#" className="learn-more">En savoir plus</a>
     </div>
   );
-
-
 }
 
 export default Home;
