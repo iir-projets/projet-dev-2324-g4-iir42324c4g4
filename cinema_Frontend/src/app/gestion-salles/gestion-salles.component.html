@@ -1,0 +1,85 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul *ngIf="villes" class="list-group">
+                <li  [ngClass]="v==currentVille?'active':''" *ngFor="let v of villes._embedded.villes" class="list-group-item clickable"
+                    (click)="onGetCinemas(v)" [style.background-color]="v === currentVille ? '#3C5B6F' : ''">
+                    {{v.name}}
+                </li>
+            </ul>
+            <div *ngIf="currentVille && currentCinema">
+              <!-- Formulaire pour ajouter une nouvelle salle -->
+              <form (submit)="ajouterSalle()">
+                <div class="form-group">
+                  <label for="nomSalle">Nom de la salle :</label>
+                  <input type="text" class="form-control" id="nomSalle" name="nomSalle" [(ngModel)]="nouvelleSalle.nom">
+                </div>
+                <div class="form-group">
+                  <label for="nombrePlaces">Nombre de places :</label>
+                  <input type="number" class="form-control" id="nombrePlaces" name="nombrePlaces" [(ngModel)]="nouvelleSalle.nombrePlaces">
+                </div>
+                <button type="submit" class="btn btn-primary" style="background-color: #3C5B6F">Ajouter</button>
+              </form>
+              
+              <!-- Affichage des salles -->
+              <div *ngFor="let salle of salles">
+                <p>{{ salle.name }} - {{ salle.nombrePlace }}</p>
+                <button (click)="modifierSalle(salle)" class="btn btn-primary">Modifier</button>
+                <button (click)="supprimerSalle(salle)" class="btn btn-danger">Supprimer</button>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            
+        </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">Liste des Cinémas</div>
+                <div class="panel-body">
+                    <ul *ngIf="cinemas" class="nav nav-pills">
+                        <li [ngClass]="c==currentCinema?'active':''" *ngFor="let c of cinemas._embedded.cinemas" class="clickable">
+                            <a (click)="onGetSalles(c)" [style.background-color]="c === currentCinema ? '#3C5B6F' : ''"style="color: #000;">{{c.name}}</a>
+                        </li>
+                    </ul>
+                    <div class="row" *ngIf="salles">
+                                  <div *ngFor="let s of salles._embedded.salles">
+                                    <div class="col-md-6">
+                                      <div class="panel panel-default">
+                                        <div class="panel-heading">{{s.name}}</div>
+                                        <div class="panel-body" style="display: flex; justify-content: space-between;">
+                                          <p>Nombre de places: {{s.nombrePlace}}</p>
+                                          
+                                          <button class="btn btn-primary" (click)="modifierSalle(s)" style="background-color: #3C5B6F">Modifier</button>
+                                          <button class="btn btn-primary" (click)="supprimerSalle(s)" style="background-color: #3C5B6F">Supprimer</button>
+                                        </div>
+                                        <div *ngIf="s.modificationActive">
+                                          <form (submit)="validerModification(s)">
+                                            <div class="form-group">
+                                              <label for="nouveauNom">Nouveau nom :</label>
+                                              <input type="text" class="form-control" id="nouveauNom" name="nouveauNom" [(ngModel)]="s.nouveauNom">
+
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="nouveauNombrePlaces">Nouveau nombre de places :</label>
+                                              <input type="number" class="form-control" id="nouveauNombrePlaces" name="nouveauNombrePlaces" [(ngModel)]="s.nouveauNombrePlaces">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary" style="background-color: #3C5B6F">Valider</button>
+                                          </form>
+                                        </div>
+                                       
+                                        
+
+                                      </div>
+                                    </div>
+                                  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+</div>

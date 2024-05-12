@@ -1,0 +1,104 @@
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color:  #BACD92;
+    transition: background-color 0.9s ease;
+
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: Georgia, serif;
+
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #fff;
+    font-family: cursive;
+}
+
+.latest-movies {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.latest-movies h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.movie-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.movie {
+    margin: 0 20px;
+}
+
+.movie img {
+    width: 200px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+.movie h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.movie p {
+    font-size: 16px;
+    color: #666;
+}
+
+.find-cinema {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.find-cinema h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.find-cinema input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.find-cinema button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.find-cinema button:hover {
+    background-color: #0056b3;
+}
+.discover-button {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #BACD92;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }

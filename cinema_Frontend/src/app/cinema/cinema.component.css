@@ -1,0 +1,14 @@
+.clikable{
+    cursor: pointer;
+    background-color:#BACD92;
+}
+.ticket{
+    margin: 5px;
+    width: 40px;
+}
+.panel-heading{
+    background-color:#BACD92;
+} 
+.nav{
+  color:#BACD92; 
+}
